@@ -32,6 +32,11 @@ ServiceComb 项目托管在[Github](https://github.com/apache?q=servicecomb)上�
 | [servicecomb-website](https://github.com/apache/servicecomb-website)               | ServiceComb网站                    | HTML   ||
 | [servicecomb-saga-actuator](https://github.com/apache/servicecomb-saga-actuator)   | 集中式Saga事务协调器 （归档）                | Java   | 项目归档，停止维护 |
 
+## 华为云对应产品
+
+- [微服务引擎 CSE](https://www.huaweicloud.com/product/cse.html)
+- [应用管理与运维平台 ServiceStage](https://www.huaweicloud.com/product/servicestage.html)
+
 ## 开发工具
 
 本地轻量化 ServiceComb 引擎: https://support.huaweicloud.com/devg-cse/cse_04_0046.html

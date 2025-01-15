@@ -51,3 +51,10 @@ Apache ServiceComb committer，参与和推动 CSEJavaSDK/ServiceComb-Java-Chass
 直播主题：《华为微服务技术与实践》
 
 点击 http://edu.huaweicloud.com 了解更多公有云知识
+
+## 存在的问题
+
+- 这个课程已经很老了，里面提到的很多涉及华为云以及直播课的链接都失效了。
+- `huaweicloudsdk` 仓库里关于 CSE 的包发布时间都是几年前，没有后续版本，很有可能最新使用方式变了。
+
+最新使用方式建议阅读 CSE 的官方文档：[微服务引擎 CSE](https://support.huaweicloud.com/cse/index.html)。里面有一些示例代码，包括ServiceComb的示例和HuaweiCloud的示例，没有包括任何类似本课程中的示例代码。
