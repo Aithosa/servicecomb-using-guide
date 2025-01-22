@@ -2,7 +2,7 @@
 
 > Things about learning and using ServiceComb
 
-本项目存储一些 ServiceComb 的使用教程、示例以及文档等。
+本项目存储一些 ServiceComb 的使用教程、示例、文档以及官方课程资料等。
 
 ## 官方资料
 
@@ -40,3 +40,12 @@ ServiceComb 项目托管在[Github](https://github.com/apache?q=servicecomb)上�
 ## 开发工具
 
 本地轻量化 ServiceComb 引擎: https://support.huaweicloud.com/devg-cse/cse_04_0046.html
+
+## 课程
+
+[21 天转型微服务实战营](./courses/21-day-cse/)
+
+课程笔记:
+
+- [WEEK1 初步了解微服并教你搭建你的微服务](./courses/21-day-cse/notes/21-day-cse-notes-week1.md)
+- [WEEK2 微服务 CSE 多种技术实战操作](./courses/21-day-cse/notes/21-day-cse-notes-week2.md)

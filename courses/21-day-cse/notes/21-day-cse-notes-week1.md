@@ -6,12 +6,12 @@
 
 大纲
 
-* 微服务简介
-* 容器与容器平台
-* 微服务架构模式
-* 微服务开发框架
-* Service Mesh
-* 微服务平台
+- 微服务简介
+- 容器与容器平台
+- 微服务架构模式
+- 微服务开发框架
+- Service Mesh
+- 微服务平台
 
 #### 什么是微服务
 
@@ -23,12 +23,12 @@
 
 #### 为什么使用微服务
 
-* **独立运行**：服务异常不再彼此影响，必要时将非核心功能隔离，不影响主要功能运转。一个服务实例崩溃不会影响其他实例，整体系统依然正常。按功能伸缩，当某个模块算力需求变化时，只进行该功能实例的伸缩，而不是整个系统的伸缩，减少资源浪费。
-* **独立升级**：一个小特性的更改或者 bug fix 不会影响大部分功能的正常运转。
-* **代码复用**：一套代码可以用于不同的独立系统中，在公司内部或者开源社区中进行分享。例如：支付服务、用户管理服务、认证鉴权。
-* **技术演进**：单体服务使用陈旧的技术时，升级变得困难。例如，从 struts1 + spring 升级到 struts2，再到完全切换到 Spring MVC，不断地切换框架为工程稳定性带来风险，而陈旧的框架又无人维护。微服务项目不受旧代码拘束。
-* **语言限制**：当你发现某个新功能更适合使用 Go 而不是 Java 时，微服务架构让开发者能根据服务场景选择合适的语言。招聘开发者也不必局限于特定语言。
-* **团队管理**：小团队运作更加敏捷，配合紧密，开发周期短，组织扩张灵活。
+- **独立运行**：服务异常不再彼此影响，必要时将非核心功能隔离，不影响主要功能运转。一个服务实例崩溃不会影响其他实例，整体系统依然正常。按功能伸缩，当某个模块算力需求变化时，只进行该功能实例的伸缩，而不是整个系统的伸缩，减少资源浪费。
+- **独立升级**：一个小特性的更改或者 bug fix 不会影响大部分功能的正常运转。
+- **代码复用**：一套代码可以用于不同的独立系统中，在公司内部或者开源社区中进行分享。例如：支付服务、用户管理服务、认证鉴权。
+- **技术演进**：单体服务使用陈旧的技术时，升级变得困难。例如，从 struts1 + spring 升级到 struts2，再到完全切换到 Spring MVC，不断地切换框架为工程稳定性带来风险，而陈旧的框架又无人维护。微服务项目不受旧代码拘束。
+- **语言限制**：当你发现某个新功能更适合使用 Go 而不是 Java 时，微服务架构让开发者能根据服务场景选择合适的语言。招聘开发者也不必局限于特定语言。
+- **团队管理**：小团队运作更加敏捷，配合紧密，开发周期短，组织扩张灵活。
 
 #### 历史
 
@@ -196,9 +196,9 @@ Service Mesh 的专题将在 Day6 的直播中介绍。
 
 大纲
 
-* 开发第一个微服务
-* 服务契约
-* 开发服务调用者
+- 开发第一个微服务
+- 服务契约
+- 开发服务调用者
 
 #### 开发第一个微服务
 
@@ -390,18 +390,18 @@ consumer 服务的`microservice.yaml`文件与 provider 服务基本一致，但
 
 大纲
 
-* 服务中心（service center，sc）
-* 配置中心（config center，cc）
-* monitor
-* 通过代理连接 CSE 服务
+- 服务中心（service center，sc）
+- 配置中心（config center，cc）
+- monitor
+- 通过代理连接 CSE 服务
 
 #### 支撑微服务运行的服务
 
 在`microservice.yaml`文件中，我们配置了三个地址，微服务启动的时候，会从配置文件中读取这些地址，分别连接华为云微服务引擎（Cloud Service Engine，CSE）的三个服务：
 
-* 服务中心（service center，sc）
-* 配置中心（config center，cc）
-* monitor
+- 服务中心（service center，sc）
+- 配置中心（config center，cc）
+- monitor
 
 ```yaml
 cse:
@@ -424,9 +424,9 @@ cse:
 
 服务中心提供了微服务注册、管理、发现功能。
 
-* 当一个 provider 微服务实例启动时，会将自己的服务信息、实例信息等注册到 sc。
-* 当 consumer 服务需要调用 provider 时，会去 sc 查询 provider 的服务契约、实例列表等信息，将请求发往实例列表中记录的实例。
-* 没有服务中心，微服务无法实现相互调用，因此服务中心是微服务实例启动时必须要连接的服务。
+- 当一个 provider 微服务实例启动时，会将自己的服务信息、实例信息等注册到 sc。
+- 当 consumer 服务需要调用 provider 时，会去 sc 查询 provider 的服务契约、实例列表等信息，将请求发往实例列表中记录的实例。
+- 没有服务中心，微服务无法实现相互调用，因此服务中心是微服务实例启动时必须要连接的服务。
 
 | 配置项                                                     | 默认值                  | 说明                                                                                                            |
 | ---------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -439,10 +439,10 @@ cse:
 
 #### 配置中心
 
-* 配置中心提供了存储、管理配置项的功能。
-* 通过连接配置中心，微服务可以获得运行时动态变更配置的能力。
-* 服务治理功能的配置也是由配置中心下发的。
-* 配置中心客户端包含在`org.apache.servicecomb:config-cc`包中。
+- 配置中心提供了存储、管理配置项的功能。
+- 通过连接配置中心，微服务可以获得运行时动态变更配置的能力。
+- 服务治理功能的配置也是由配置中心下发的。
+- 配置中心客户端包含在`org.apache.servicecomb:config-cc`包中。
 
 | 配置项                                     | 默认值 | 说明                                                                       |
 | ------------------------------------------ | ------ | -------------------------------------------------------------------------- |
@@ -472,26 +472,26 @@ monitor 服务允许微服务实例上报吞吐量等数据，并在 CSE 的服�
 
 大纲
 
-* 服务启动流程
-* 服务发现
-* 服务退出
+- 服务启动流程
+- 服务发现
+- 服务退出
 
 #### 服务启动流程
 
 一个微服务实例在启动过程中主要经历的流程有：
 
-* 初始化日志框架
-* 加载本地配置（包括 System Property、环境变量、配置文件）
-* 实例化 Spring Bean
-* 初始化 SCBEngine
-* 注册服务
+- 初始化日志框架
+- 加载本地配置（包括 System Property、环境变量、配置文件）
+- 实例化 Spring Bean
+- 初始化 SCBEngine
+- 注册服务
 
 注册服务的流程如下：
 
 ![服务启动流程](./asserts/1_1_23.png)
 
-* 当 env 为默认环境或 production 环境时，不允许出现服务实例本地与 sc 上的服务契约不一致的情况（一旦契约不一致会走左图中的红色路径）
-* `env=development`时，服务实例会将不一致的接口契约注册到 sc，覆盖 sc 上原有的契约（如下图）
+- 当 env 为默认环境或 production 环境时，不允许出现服务实例本地与 sc 上的服务契约不一致的情况（一旦契约不一致会走左图中的红色路径）
+- `env=development`时，服务实例会将不一致的接口契约注册到 sc，覆盖 sc 上原有的契约（如下图）
 
 ```yaml
 APPLICATION_ID: Training21Days-HelloWorld # 应用Id 是微服务的一个隔离层级，默认只有同应用下的微服务可以相互调用
@@ -534,25 +534,25 @@ public class CustomBootEventListener implements BootListener {
 
 Consumer 服务调用 provider 服务时，需要去服务中心查询 provider 服务的契约、实例列表等信息，然后才能对 provider 发起调用：
 
-* 查询条件包括 AppID、serviceName、environment、versionRule，如果碰到 consumer 端找不到 provider 服务的问题，除了检查 provider 服务的实例有没有注册到 sc，还需要检查这四个配置项是否有问题
-* 查询到 provider 端服务信息后，consumer 会从 sc 下载该 provider 服务的全部契约，加载到本地
-* Consumer 端加载 provider 服务信息的过程发生在 consumer 第一次调用该 provider 的时候，如果 consumer 服务的实例在启动后一直没有调用 provider，则它一直不会去 sc 查询和加载 provider 服务信息
+- 查询条件包括 AppID、serviceName、environment、versionRule，如果碰到 consumer 端找不到 provider 服务的问题，除了检查 provider 服务的实例有没有注册到 sc，还需要检查这四个配置项是否有问题
+- 查询到 provider 端服务信息后，consumer 会从 sc 下载该 provider 服务的全部契约，加载到本地
+- Consumer 端加载 provider 服务信息的过程发生在 consumer 第一次调用该 provider 的时候，如果 consumer 服务的实例在启动后一直没有调用 provider，则它一直不会去 sc 查询和加载 provider 服务信息
 
 #### 服务退出
 
 CSEJavaSDK 向 JVM 注册了一个`shutdown hook`，以实现优雅停机，在 JVM 进程退出时进行一系列的清理操作，其中包括：
 
-* 向服务中心注销本实例
-* 停止接收请求，并等待已接受的请求处理完成
+- 向服务中心注销本实例
+- 停止接收请求，并等待已接受的请求处理完成
 
 由于 JVM 的限制，要确保优雅停机功能正常触发，需要用户正常停止 JVM 进程，而不能强制杀进程。以 Linux 操作系统为例：
 
-* `kill ${PID}` 的方式停止微服务进程可以触发优雅停机
-* `kill –0 ${PID}` 的方式强制停止微服务进程则不会触发优雅停机
+- `kill ${PID}` 的方式停止微服务进程可以触发优雅停机
+- `kill –0 ${PID}` 的方式强制停止微服务进程则不会触发优雅停机
 
 如果微服务实例遭遇异常情况，没有调用 sc 接口注销自身实例就停止运行。sc 会通过感知心跳超时的方式下线实例。前面的课程中提到微服务连接 sc 的配置中有心跳时间间隔和允许连续心跳失败次数这两个配置，假设心跳时间间隔为 t，允许心跳失败次数为 n，则 sc 检测到实例连续心跳失败 n+1 次的时候下线实例，从实例异常退出到 sc 下线实例的时延 T 的取值范围是`t*n < T <t*(n+1)` ，按照默认值计算为 90-120 秒
 
-![服务退出流程](./asserts/1_1_25.jpg)
+![服务退出流程](./asserts/1_1_25.png)
 
 注意有些 IDE 上会提供两种停止方式，以 IDEA 为例，上面的红色方形按钮是强制退出，不会触发优雅停机。下面的图标是正常退出进程，可以触发优雅停机。
 
@@ -594,33 +594,33 @@ public String sayHelloRestTemplate(@QueryParam("name") String name) {
 
 大纲
 
-* `microservice.yaml`配置文件
-* 环境变量、`System property`
-* 动态配置
-* 通过 API 获取配置
-* 日志配置
+- `microservice.yaml`配置文件
+- 环境变量、`System property`
+- 动态配置
+- 通过 API 获取配置
+- 日志配置
 
 #### microservice.yaml 配置文件
 
 微服务实例启动时会从 classpath 下加载`microservice.yaml`配置文件：
 
-* 如果多个 jar 包下都有`microservice.yaml`文件，那么他们都会被加载。
-* 磁盘目录下的`microservice.yaml`配置文件的优先级高于 jar 包内的配置文件。
-* 可以通过在`microservice.yaml`文件内配置`servicecomb-config-order`来指定优先级。
+- 如果多个 jar 包下都有`microservice.yaml`文件，那么他们都会被加载。
+- 磁盘目录下的`microservice.yaml`配置文件的优先级高于 jar 包内的配置文件。
+- 可以通过在`microservice.yaml`文件内配置`servicecomb-config-order`来指定优先级。
 
 #### 环境变量、`System property`
 
 微服务实例启动时也会从环境变量、系统属性中加载配置：
 
-* Linux 系统的环境变量不允许有点号”.”，但 CSEJavaSDK 框架会自动将配置项 key 中的下划线映射为点号，因此我们可以将点转换为下划线来配置环境变量
-* 环境变量的优先级高于配置文件，`System property`的优先级高于环境变量
+- Linux 系统的环境变量不允许有点号”.”，但 CSEJavaSDK 框架会自动将配置项 key 中的下划线映射为点号，因此我们可以将点转换为下划线来配置环境变量
+- 环境变量的优先级高于配置文件，`System property`的优先级高于环境变量
 
 #### 动态配置
 
 微服务实例连接配置中心后，可以从配置中心获取动态配置：
 
-* 动态配置的优先级是最高的，并且可以在运行时刷新
-* 服务治理所使用的诸多控制逻辑也是由配置项来控制的。实现服务动态治理的方式就是通过配置中心动态下发配置项
+- 动态配置的优先级是最高的，并且可以在运行时刷新
+- 服务治理所使用的诸多控制逻辑也是由配置项来控制的。实现服务动态治理的方式就是通过配置中心动态下发配置项
 
 #### 通过 API 获取配置
 
@@ -660,9 +660,9 @@ hello:
 
 #### 日志配置
 
-* CSEJavaSDK 默认使用的日志框架是 Log4j，并且给出了一份默认的配置，在 `org.apache.servicecomb:foundation-common` 包的 `log4j.properties` 文件内。
-* CSEJavaSDK 提供了 accesslog 功能，可以在传输方式为 REST over Vertx 的条件下使用，accesslog 默认也是基于 Log4j 打印的，配置文件在 `org.apache.servicecomb:transport-rest-vertx` 包的 `log4j.properties` 文件内。
-* 如果要覆盖默认的日志配置，在项目的 `resources/config` 目录下配置一份 `log4j.properties` 文件即可。
+- CSEJavaSDK 默认使用的日志框架是 Log4j，并且给出了一份默认的配置，在 `org.apache.servicecomb:foundation-common` 包的 `log4j.properties` 文件内。
+- CSEJavaSDK 提供了 accesslog 功能，可以在传输方式为 REST over Vertx 的条件下使用，accesslog 默认也是基于 Log4j 打印的，配置文件在 `org.apache.servicecomb:transport-rest-vertx` 包的 `log4j.properties` 文件内。
+- 如果要覆盖默认的日志配置，在项目的 `resources/config` 目录下配置一份 `log4j.properties` 文件即可。
 
 在项目的`resources/config`目录下放置一份`log4j.properties`配置文件，覆盖默认的配置，令 accesslog 的内容合并到普通业务日志中输出。
 
@@ -672,9 +672,9 @@ hello:
 
 `microservice.yaml`配置文件
 
-* 如果多个 jar 包下都有`microservice.yaml`文件，那么他们都会被加载。
-* 磁盘目录下的`microservice.yaml`配置文件的优先级高于 jar 包内的配置文件，但是需要确认是哪里的目录。
-* 可以通过在`microservice.yaml`文件内配置`servicecomb-config-order`来指定优先级。
+- 如果多个 jar 包下都有`microservice.yaml`文件，那么他们都会被加载。
+- 磁盘目录下的`microservice.yaml`配置文件的优先级高于 jar 包内的配置文件，但是需要确认是哪里的目录。
+- 可以通过在`microservice.yaml`文件内配置`servicecomb-config-order`来指定优先级。
 
 > 配置文件和 jar 包在同一个目录就可以读取
 
@@ -682,15 +682,15 @@ hello:
 
 微服务实例启动时也会从环境变量、系统属性中加载配置：
 
-* Linux 系统的环境变量不允许有点号”.”，但 CSEJavaSDK 框架会自动将配置项 key 中的下划线映射为点号，因此我们可以将点转换为下划线来配置环境变量
-* 环境变量的优先级高于配置文件，`System property`的优先级高于环境变量
+- Linux 系统的环境变量不允许有点号”.”，但 CSEJavaSDK 框架会自动将配置项 key 中的下划线映射为点号，因此我们可以将点转换为下划线来配置环境变量
+- 环境变量的优先级高于配置文件，`System property`的优先级高于环境变量
 
 动态配置
 
 微服务实例连接配置中心后，可以从配置中心获取动态配置：
 
-* 动态配置的优先级是最高的，并且可以在运行时刷新
-* 服务治理所使用的诸多控制逻辑也是由配置项来控制的。实现服务动态治理的方式就是通过配置中心动态下发配置项
+- 动态配置的优先级是最高的，并且可以在运行时刷新
+- 服务治理所使用的诸多控制逻辑也是由配置项来控制的。实现服务动态治理的方式就是通过配置中心动态下发配置项
 
 > **动态配置是如何到项目包的，是直接传输还是有配置文件在本地。**
 
@@ -703,24 +703,24 @@ CSEJavaSDK 使用统一的 API 来获取配置，用户使用配置的时候，�
 > 这里的通过 API 获取配置就是指用 archaius 获取配置。
 > 内容可能在 `foundation-config-2.1.0.jar` 和 `config-cc-2.1.0.jar`（ConfigCenter） 中
 
-能读取`microservice.yaml`就意味着有 archaius 配置定义。
+能动态读取`microservice.yaml`就意味着有 archaius 配置定义。
 
 日志配置
 
-* CSEJavaSDK 默认使用的日志框架是 Log4j，并且给出了一份默认的配置，在 `org.apache.servicecomb:foundation-common` 包的 `log4j.properties` 文件内。
-* CSEJavaSDK 提供了 accesslog 功能，可以在传输方式为 REST over Vertx 的条件下使用，accesslog 默认也是基于 Log4j 打印的，配置文件在 `org.apache.servicecomb:transport-rest-vertx` 包的 `log4j.properties` 文件内。
-* 如果要覆盖默认的日志配置，在项目的 `resources/config` 目录下配置一份 `log4j.properties` 文件即可。
+- CSEJavaSDK 默认使用的日志框架是 Log4j，并且给出了一份默认的配置，在 `org.apache.servicecomb:foundation-common` 包的 `log4j.properties` 文件内。
+- CSEJavaSDK 提供了 accesslog 功能，可以在传输方式为 REST over Vertx 的条件下使用，accesslog 默认也是基于 Log4j 打印的，配置文件在 `org.apache.servicecomb:transport-rest-vertx` 包的 `log4j.properties` 文件内。
+- 如果要覆盖默认的日志配置，在项目的 `resources/config` 目录下配置一份 `log4j.properties` 文件即可。
 
 在项目的`resources/config`目录下放置一份`log4j.properties`配置文件，覆盖默认的配置，令 accesslog 的内容合并到普通业务日志中输出。
 
-> **日志打印的 traceId 是怎么实现的，servicecomb 就不支持默认展示。**
+> **日志打印的 traceId 是怎么实现的，servicecomb 就不支持默认展示（询问说是由于异步无法准确展示）。**
 
 ### 1.6 DAY6 CSE 实战之开发网关（含直播）
 
 大纲
 
-* 使用 `DefaultEdgeDispatcher` 开发网关服务
-* 使用 `URLMappedEdgeDispatcher` 开发网关服务
+- 使用 `DefaultEdgeDispatcher` 开发网关服务
+- 使用 `URLMappedEdgeDispatcher` 开发网关服务
 
 #### EdgeService 网关介绍
 
@@ -759,8 +759,8 @@ EdgeService 本身也是一个微服务，开发和配置方式与普通的微�
 
 定义服务的`main`类和`microservice.yaml`配置文件：
 
-* `Main`类的定义与普通微服务完全相同
-* `microservice.yaml`配置文件与普通微服务基本相同，只是需要额外增加一些请求
+- `Main`类的定义与普通微服务完全相同
+- `microservice.yaml`配置文件与普通微服务基本相同，只是需要额外增加一些请求
 
 转发规则的配置
 
@@ -810,17 +810,17 @@ cse:
 
 #### EdgeService 网关转发机制
 
-* 由前文可以看出，DefaultEdgeDispatcher 的配置较为简单，但对于 EdgeService 接收的请求 URL 格式有一定的要求；`URLMappedEdgeDispatcher`的转发规则较为灵活，但配置相对更繁琐一点。
-* 推荐用户在设计微服务的时候预先规划好各微服务的请求 URL 格式，可以减少后期服务演进过程中碰到的接口兼容性问题。
+- 由前文可以看出，DefaultEdgeDispatcher 的配置较为简单，但对于 EdgeService 接收的请求 URL 格式有一定的要求；`URLMappedEdgeDispatcher`的转发规则较为灵活，但配置相对更繁琐一点。
+- 推荐用户在设计微服务的时候预先规划好各微服务的请求 URL 格式，可以减少后期服务演进过程中碰到的接口兼容性问题。
 
 ### 1.7 DAY7 CSE 实战之框架扩展机制
 
 大纲
 
-* Handler 扩展机制
-* Filter 扩展机制
-* 异常转换扩展机制
-* 请求处理流程简介
+- Handler 扩展机制
+- Filter 扩展机制
+- 异常转换扩展机制
+- 请求处理流程简介
 
 #### Handler 扩展机制
 
@@ -832,11 +832,11 @@ Handler 机制工作于用户业务代码接收 REST 请求之前和发送 REST 
 // 每个微服务 + invocationType，都对应一个handler实例
 public interface Handler {
   /**
-   * 每次有请求经过Handler链时，都会被这个方法处理一次
+   - 每次有请求经过Handler链时，都会被这个方法处理一次
    *
-   * @param invocation invocation中记录了本次请求的相关信息
-   * @param asyncResp asyncResp用于异步返回处理结果
-   * @throws Exception
+   - @param invocation invocation中记录了本次请求的相关信息
+   - @param asyncResp asyncResp用于异步返回处理结果
+   - @throws Exception
    */
   void handle(Invocation invocation, AsyncResponse asyncResp) throws Exception;
 }
@@ -889,9 +889,9 @@ cse:
 
 #### Filter 扩展机制
 
-* Filter 机制有两个接口，即`HttpServerFilter`和`HttpClientFilter`。
-* Filter 扩展机制工作于 Handler 扩展机制的外层，`HttpServerFilter`在 provider 端 handler 前工作，`HttpClientFilter`在 consumer 端 handler 后工作。
-* Filter 机制只有全局级别的生效范围。
+- Filter 机制有两个接口，即`HttpServerFilter`和`HttpClientFilter`。
+- Filter 扩展机制工作于 Handler 扩展机制的外层，`HttpServerFilter`在 provider 端 handler 前工作，`HttpClientFilter`在 consumer 端 handler 后工作。
+- Filter 机制只有全局级别的生效范围。
 
 `HttpServerFilter`中的常用方法介绍如下：
 
@@ -904,13 +904,13 @@ public interface HttpServerFilter {
   }
 
   /**
-   * @return if finished, then return a none null response<br>
-   * if return a null response, then sdk will call next filter.afterReceiveRequest
+   - @return if finished, then return a none null response<br>
+   - if return a null response, then sdk will call next filter.afterReceiveRequest
    */
   Response afterReceiveRequest(Invocation invocation, HttpServletRequestEx requestEx);
 
   /**
-   * @param invocation maybe null
+   - @param invocation maybe null
    */
   default void beforeSendResponse(Invocation invocation, HttpServletResponseEx responseEx) {
 
@@ -994,8 +994,8 @@ public class DemoHandler implements Handler {
 
 如果用户的业务代码抛出了`InvocationException`异常，则框架会将`InvocationException`中的 data 直接序列化为响应消息的 body。如果是其他的异常，则返回的响应消息状态码为 490/590，响应 body 为`CommonExceptionData`。我们也提供了异常转换扩展机制，允许用户捕获不同类型的异常后，将其转换为响应消息：
 
-* 该机制允许按优先级排列和选取异常转换器
-* 可以定义特定类型的异常转换器，转换该类型及其子类的异常
+- 该机制允许按优先级排列和选取异常转换器
+- 可以定义特定类型的异常转换器，转换该类型及其子类的异常
 
 #### 异常转换扩展机制——开发一个异常转换器
 
@@ -1037,8 +1037,8 @@ public class DemoHandler implements Handler {
 
 ![请求处理流程](./asserts/1_1_35.png)
 
-* Filter 机制只有全局作用范围，Handler 机制有全局和服务级作用范围
-* 注意异常转换扩展捕获异常的位置，如果异常不是由业务逻辑抛出，而是由 Handler 等抛出的，则不在它的处理范围内
-* Handler 由`handler.xml`定义加载，Filter 和异常转换机制由 SPI 机制加载，这些机制的实现类都不是由 Spring Bean 机制加载和管理的，因此`@Autowired`等 Bean 自动注入功能无法在这些扩展类里使用
-* 如果要在这些扩展类里获取 Spring Bean，可以考虑使用`BeanUtils#getBean`方法，但要注意获取时机不能太早，否则可能对应的 Spring Bean 还没有被 Spring 框架实例化
-* EdgeService 网关服务只有 consumer 端 handler，没有 provider 端 handler
+- Filter 机制只有全局作用范围，Handler 机制有全局和服务级作用范围
+- 注意异常转换扩展捕获异常的位置，如果异常不是由业务逻辑抛出，而是由 Handler 等抛出的，则不在它的处理范围内
+- Handler 由`handler.xml`定义加载，Filter 和异常转换机制由 SPI 机制加载，这些机制的实现类都不是由 Spring Bean 机制加载和管理的，因此`@Autowired`等 Bean 自动注入功能无法在这些扩展类里使用
+- 如果要在这些扩展类里获取 Spring Bean，可以考虑使用`BeanUtils#getBean`方法，但要注意获取时机不能太早，否则可能对应的 Spring Bean 还没有被 Spring 框架实例化
+- EdgeService 网关服务只有 consumer 端 handler，没有 provider 端 handler
